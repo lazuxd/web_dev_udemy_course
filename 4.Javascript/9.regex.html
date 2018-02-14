@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Speed</title>
+        <style>
+            .keyword {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="t">
+            int main()
+        </p>
+        <script>
+            var s = document.getElementById("t").innerHTML;
+            var p = /int/;
+            document.getElementById("t").innerHTML = s.replace(p, "<span class='keyword'>" + s.match(p) + "</span>");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Regex2</title>
+        <style>
+            .keyword {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="t">
+            Enter something:
+            <textarea id="text" type="text" cols="50" rows="20"></textarea>
+            <button id="btn" onclick="check()">Check</button>
+        </p>
+        <script>
+            function check() {
+                var str = document.getElementById("text").value;
+                var p = /(int|float|char|double) *\*/mg;
+                alert("You have "+str.match(p).length+" pointers there!");
+            }
+        </script>
+    </body>
+</html>

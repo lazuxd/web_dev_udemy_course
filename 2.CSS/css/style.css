@@ -1,0 +1,11 @@
+p {
+    color: blue;
+    background-color: yellow;
+    font-size: 200%;
+    font-family: monospace;
+}
+a:hover {
+    font-size: 200%;
+    background-color: aqua;
+    color: red;
+}

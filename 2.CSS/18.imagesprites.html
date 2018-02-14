@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Internal CSS</title>
+        <style>
+            .sprite {
+                width: 500px;
+                height: 400px;
+                background: url(resources/milkyway.jpeg) -600px -500px
+            }
+            .sprite:hover {
+                width: 500px;
+                height: 400px;
+                background: url(resources/milkyway.jpeg) 0px 0px;
+                position: relative;
+                top: 50px;
+                left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <img class="sprite"/>
+    </body>
+</html>

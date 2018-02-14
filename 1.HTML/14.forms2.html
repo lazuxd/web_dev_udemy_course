@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Form</title>
+    </head>
+    <body>
+        <form method="get">
+            <p>Enter your location:</p>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" size="30px" minlength="8" maxlength="80" placeholder="Address" />
+            <br />
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" name="zipcode" id="zipcode" size="30px" minlength="6" maxlength="6" placeholder="Zip Code" />
+            <br />
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" size="30px" minlength="3" maxlength="30" placeholder="City">
+            <p>Choose shipping method:</p>
+            <select name="shipping">
+                <option value="oneday">One-Day Shipping</option>
+                <option value="twoday">Two-Day Shipping</option>
+                <option value="threeday">Three-Day Shipping</option>
+            </select>
+            <p>Choose payment method:</p>
+            <label><input type="radio" name="payment" value="paypal" checked="checked"/>Paypal</label>
+            <label><input type="radio" name="payment" value="debit" />Debit Card</label>
+            <label><input type="radio" name="payment" value="credit" />Credit Card</label>
+            <p>Comments:</p>
+            <textarea name="comments" rows="4" cols="40" placeholder="Comments..." maxlength="150"></textarea>
+            <p></p>
+            <label>
+                <input type="checkbox" name="notify" checked="checked" />
+                Send me notifications.
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" name="save" checked="checked" />
+                Save my payment info.
+            </label>
+            <p></p>
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>

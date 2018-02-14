@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Regex2</title>
+        <style>
+            .passwd {
+                width: 150px;
+                display: block;
+            }
+            #error {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="t">
+            <span class="passwd">Enter password:</span>
+            <input id="password" type="password" />
+            <br />
+            <span class="passwd">Re-enter password:</span>
+            <input id="password2" type="password" />
+            <br />
+            <br />
+            <button id="btn" onclick="check()">Submit</button>
+        </div>
+        <p id="error"></p>
+        <script>
+            function check() {
+                var pwd1 = document.getElementById("password").value;
+                var pwd2 = document.getElementById("password2").value;
+                var errorP = document.getElementById("error");
+                var errorMsg = "";
+                try {
+                    if (pwd1.length < 6) {
+                        errorMsg += "Your password must have at least 6 characters.<br />";
+                    }
+                    if (!/[A-Z]/g.test(pwd1)) {
+                        errorMsg += "Your password must contain at least one capital letter.<br />";
+                    }
+                    if (!/\d/g.test(pwd1)) {
+                        errorMsg += "Your password must contain at least one digit.<br />";
+                    }
+                    if (!/[^\w\d\s]/g.test(pwd1)) {
+                        errorMsg += "Your password must contain at least one symbol.<br />";
+                    }
+                    if (pwd1 != pwd2) {
+                        errorMsg += "Passwords don't match.<br />"
+                    }
+                    if (errorMsg.length > 0) {
+                        throw errorMsg;
+                    } else {
+                        errorP.innerHTML = "Your password is valid.";
+                        errorP.style.color = "green";
+                    }
+                } catch (err) {
+                    errorP.style.color = "red";
+                    errorP.innerHTML = err;
+                }
+            }
+        </script>
+    </body>
+</html>

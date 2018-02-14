@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Speed</title>
+    </head>
+    <body>
+        <p>Enter your speed:
+            <input id="speed" type="number"/>
+            <button onclick="checkSpeed()">Check</button>
+        </p>
+        <script>
+            function checkSpeed() {
+                var x = document.getElementById("speed").value;
+                if (x >= 70)
+                    alert("You are going too fast!");
+                else if (x >= 40)
+                    alert("You are going fine!");
+                else
+                    alert("You are going too slow!");
+            }
+        </script>
+    </body>
+</html>

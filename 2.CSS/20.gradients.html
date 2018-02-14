@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Gradients</title>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            div {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                width: auto;
+                height: 120px;
+/*                background-color: red;*/
+                background: linear-gradient(45deg, red 15%, orange 30%, yellow 45%, green 60%, blue 75%, indigo 90%);
+            }
+            #first:hover {
+/*                background: linear-gradient(50deg, red 15%, orange 30%, yellow 45%, green 60%, blue 75%, indigo 90%);*/
+                background: radial-gradient(red 15%, orange 30%, yellow 45%, green 60%, blue 75%, indigo 90%);
+            }
+            .cls1 {
+                width: auto;
+                height: 120px;
+/*                background-color: red;*/
+                background: radial-gradient(red 15%, orange 30%, yellow 45%, green 60%, blue 75%, indigo 90%);
+            }
+            .cls1:hover {
+                background: linear-gradient(45deg, red 15%, orange 30%, yellow 45%, green 60%, blue 75%, indigo 90%);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first"></div>
+        <div class="cls1"></div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Internal CSS</title>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            div {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: red;
+            }
+            .cls1 {
+                background-color: green;
+            }
+            .cls2 {
+                background-color: blue;
+            }
+            #f {
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers <span id="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <div id="green" class="cls1">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers and threatened the ability of the craft to gather energy through their solar panels, causing engineers to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <div id="blue" class="cls2">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers and threatened the ability of the craft to gather energy through their solar panels, causing engineers to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <button id="b1">Change second box</button>
+        <button id="b2">Change span element</button>
+        <script>
+            document.getElementById("b1").onclick = function() {
+                var s = "";
+                for (var i = 1; i <= 1020; i++) {
+                    s += "*";
+                    if (i % 20 == 0)
+                        s+='\n';
+                }
+                document.getElementById("green").innerHTML = "<p>"+s+"</p>";
+                var t = document.getElementById("blue").style;
+                t.width = "50%";
+            }
+            document.getElementById("b2").onclick = function() {
+                var t = document.getElementById("f").style;
+                t.background = "linear-gradient(#f28f16, #76f117)";
+                t.fontSize = "30px";
+            }
+        </script>
+    </body>
+</html>
