@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ajax</title>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            div {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: #ff0000;
+            }
+            .cls1 {
+                background-color: green;
+            }
+            .cls2 {
+                background-color: blue;
+            }
+            .f {
+                background-color: aqua;
+            }
+            #p2 {
+                width: 300px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+        <div id="first">In July 2007</div>
+        <div class="cls1" id="p2">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers and threatened the ability of the craft to gather energy through their solar panels, causing engineers to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <div class="cls1 cls2">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers and threatened the ability of the craft to gather energy through their solar panels, causing engineers to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <button id="fadeIn">FadeIn</button>
+        <button id="fadeOut">FadeOut</button>
+        <button id="fadeToggle">FadeToggle</button>
+        <button id="animate">Animate</button>
+        <br />
+        <button id="load">Ajax Load</button>
+        <button id="success">Ajax success=</button>
+        <button id="done">Ajax done()</button>
+        <script>
+            $(function() {
+                $("#fadeIn").click(function() {
+                    $("#first").fadeIn();
+                });
+                $("#fadeOut").click(function() {
+                    $("#first").fadeOut();
+                });
+                $("#fadeToggle").click(function() {
+                    $("#first").fadeToggle(3000);
+                });
+                $("#animate").click(function() {
+                    $("#first").animate({'width' : '400px'}, "slow");
+                    $("#first").animate({'height' : '400px'}, "slow");
+                    $("#first").delay(3000).animate({'background-color' : 'yellow'}, function() {alert("Animation Finishes!");});
+                });
+                $("#load").click(function() {
+                    $("#first").load("ajax/elements.txt .compSci:first");
+                });
+                $("#success").click(function() {
+                    $.ajax({
+                        url: "ajax/elements.txt",
+                        success: function(data) {
+                            var p1 = /< *p +[^<>]*id *= *['"]calcAbout['"][^<>]*>[^<>]*< *\/ *p *>/;
+//                            var p2 = //;
+                            var str = data.match(p1);
+                            $("#first").html(str);
+                        },
+                        error: function() {
+                            alert("Something went wrong!");
+                        }
+                    });
+                });
+                $("#done").click(function() {
+                    $.ajax({url: "ajax/elements.txt"}).done(function(data) {
+                        $("#first").html(data);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

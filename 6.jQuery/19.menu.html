@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Menus</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        <style>
+/*
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+*/
+            #first {
+                background-color: lime;
+                margin: 20px;
+                padding: 20px; 
+            }
+            #second {
+                background-color: cyan;
+                margin: 20px;
+                padding: 20px; 
+            }
+            .ui-menu {
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first">
+            <ul id="algoStruct">
+                <li>Sorting
+                    <ul>
+                        <li>Selection</li>
+                        <li>Insertion
+                            <ul>
+                                <li>ShellSort</li>
+                            </ul>
+                        </li>
+                        <li>QuickSort</li>
+                    </ul>
+                    
+                </li>
+                <li>Searching
+                    <ul>
+                        <li>Sequential</li>
+                        <li>Binary
+                            <ul>
+                                <li>On Arrays</li>
+                                <li>Binary Tree Search</li>
+                            </ul>
+                        </li>
+                        <li>Hashing</li>
+                    </ul>
+                </li>
+                <li>Pattern Matching</li>
+                <li>Mathematical</li>
+            </ul>
+        </div>
+        <div id="second">
+            <ul id="algoStruct2">
+                <li class="ui-widget-header">Sorting</li>
+                        <li>Selection</li>
+                        <li>Insertion
+                            <ul>
+                                <li>ShellSort</li>
+                            </ul>
+                        </li>
+                        <li>QuickSort</li>
+                <li class="ui-widget-header">Searching</li>
+                        <li>Sequential</li>
+                        <li>Binary
+                            <ul>
+                                <li>On Arrays</li>
+                                <li>Binary Tree Search</li>
+                            </ul>
+                        </li>
+                        <li>Hashing</li>
+                <li class="ui-widget-header">Pattern Matching</li>
+                <li class="ui-widget-header">Mathematical</li>
+            </ul>
+        </div>
+        <script>
+            $(function() {
+                $("#algoStruct").menu();
+                $("#algoStruct2").menu();
+            });
+        </script>
+    </body>
+</html>

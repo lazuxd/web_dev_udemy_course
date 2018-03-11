@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Autocomplete</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            .m {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: lime;
+            }
+            #cls1 {
+                background-color: green;
+                color: white;
+                width: auto;
+                height: auto;
+                padding: 30px;
+            }
+            #cls2 {
+                background-color: blue;
+                width: auto;
+                height: auto;
+            }
+            .f {
+                background-color: aqua;
+            }
+            .connected {
+                min-height: 20px;
+            }
+            .connected li {
+                background: #d2ded2;
+                margin-bottom: 20px;
+                font-size: 26px;
+                user-select: none;
+                -moz-user-select: none;
+            }
+            .ph {
+                border: 1px dashed #a0a0a0;
+            }
+            .notShown {
+                display: none;
+            }
+            #distro, .ui-autocomplete {
+                font-size: 22px;
+            }
+            .ui-autocomplete {
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="resizer" class="ui-widget-content m">
+            <div id="first" class="ui-widget-content">
+                <h3>Section 1</h3>
+                <div>
+                    <p>Content 1</p>
+                    <p>Content 1</p>
+                    <p>Content 1</p>
+                    <p>Content 1</p>
+                    <p>Content 1</p>
+                </div>
+                <h3>Section 2</h3>
+                <div>
+                    <p>Content 2</p>
+                    <p>Content 2</p>
+                </div>
+                <h3>Section 3</h3>
+                <div>
+                    <p>Content 3</p>
+                    <p>Content 3</p>
+                    <p>Content 3</p>
+                </div>
+                <h3>Section 4</h3>
+                <div>
+                    <p>Content 4</p>
+                </div>
+            </div>
+        </div>
+        <div id="cls1" class="ui-widget-content m">
+            Type your favorite Linux distro:
+            <input type="text" id="distro" />
+        </div>
+        <div id="cls2" class="ui-widget-content m">
+            <ul id="distros2" class="connected">
+                <li class="ui-state-default">Arch Linux</li>
+                <li class="ui-state-default">Manjaro</li>
+                <li class="ui-state-default">Solus OS</li>
+            </ul>
+        </div>
+        <div id="distroList" class="notShown">Linux Mint,Ubuntu,Debian,Arch Linux,Manjaro,Solus OS,Fedora,Red Hat Enterprise Linux,openSuse,PCLinuxOS,Puppy
+        </div>
+        <script>
+            $(function() {
+                $("#first").accordion({
+                    collapsible: true,
+                    heightStyle: "fill",
+                    icons: {
+                        header: "ui-icon-circle-triangle-e",
+                        activeHeader: "ui-icon-circle-triangle-s"
+                    }
+                });
+                $("#resizer").resizable({
+                    resize: function() {
+                        $("#first").accordion("refresh");
+                    }
+                });
+                $("#distro").autocomplete({
+                    source: $("#distroList").text().split(",")
+                });
+            });
+        </script>
+    </body>
+</html>

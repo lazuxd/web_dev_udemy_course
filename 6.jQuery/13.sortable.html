@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sortable</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            .m {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: red;
+            }
+            #cls1 {
+                background-color: green;
+                width: auto;
+                height: auto;
+                padding: 30px;
+            }
+            #cls2 {
+                background-color: blue;
+                width: auto;
+                height: auto;
+            }
+            .f {
+                background-color: aqua;
+            }
+            .connected {
+                min-height: 20px;
+            }
+            .connected li {
+                background: #d2ded2;
+                margin-bottom: 20px;
+                font-size: 26px;
+                user-select: none;
+                -moz-user-select: none;
+            }
+            .ph {
+                border: 1px dashed #a0a0a0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first" class="ui-widget-content m">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <div id="cls1" class="ui-widget-content m">
+            <ul id="distros1" class="connected">
+                <li class="ui-state-default">Linux Mint</li>
+                <li class="ui-state-default">Ubuntu</li>
+                <li class="ui-state-default notSortable">Debian</li>
+            </ul>
+        </div>
+        <div id="cls2" class="ui-widget-content m">
+            <ul id="distros2" class="connected">
+                <li class="ui-state-default">Arch Linux</li>
+                <li class="ui-state-default">Manjaro</li>
+                <li class="ui-state-default">Solus OS</li>
+            </ul>
+        </div>
+        <script>
+            $(function() {
+                $("#distros1").sortable({
+                    placeholder: "ph",
+                    cancel: ".notSortable"
+                });
+                $("#distros2").sortable();
+                $("#distros1, #distros2").sortable({
+                    connectWith: ".connected"
+                });
+            });
+        </script>
+    </body>
+</html>

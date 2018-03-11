@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Change HTML Content and Attributes</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            div {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: red;
+            }
+            .cls1 {
+                background-color: green;
+            }
+            .cls2 {
+                background-color: magenta;
+            }
+            .f {
+                background-color: aqua;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first"><p>In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight</p><p>to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled.</p><p>However, the dust storms lifted, allowing them to resume operations.</p></div>
+        <div class="cls1"><p>In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight</p><p>to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled.</p><p>However, the dust storms lifted, allowing them to resume operations.</p></div>
+        <div class="cls2"><p>In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight</p><p>to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled.</p><p>However, the dust storms lifted, allowing them to resume operations.</p>
+        <a href="#first">This is a link.</a></div>
+        <p><input type="text" /><button type="submit">Submit</button></p>
+<!--        <input type="text" /><button type="submit">Submit</button>-->
+        <table>
+            <tr><th>Name</th><th>Company</th><th>Known for</th></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+        </table>
+        <button id="btn1">Change HTML</button>
+        <button id="btn2">Change Text</button>
+        <button id="btn3">Get Val</button>
+        <button id="btn4">Change Attrs</button>
+        <button id="btn5">Append</button>
+        <button id="btn6">Prepend</button>
+        <button id="btn7">After</button>
+        <button id="btn8">Before</button>
+        <script>
+            var l = "<ul><li>Java</li><li>C#</li></ul>";
+            $(function () {
+                $("*").css("font-size", "24px");
+                $("div > *:first-child, div > *:last-child").css("background-color", "orange");
+                $("[href='#first']").css("border", "10px solid lime");
+                $("tr:odd").css("background-color", "lime");
+                $("tr:even").css("background-color", "orange");
+                $("input").css("background-color", "green");
+                $("input").css("color", "cyan");
+                $("button").css("color", "red");
+                $("div:has(a)").css("text-decoration", "line-through");
+                $("#btn1").click(function() {
+                    $("tr:eq(8) > td:eq(0)").html("<strong>This will be bold.</strong>");
+                });
+                $("#btn2").click(function() {
+                    $("tr:eq(8) > td:eq(1)").text("<strong>This will not be bold.</strong>");
+                });
+                $("#btn3").click(function() {
+                    $("tr:eq(8) > td:eq(2)").text($("input").val());
+                });
+                $("#btn4").click(function() {
+//                    $("div:last a").css("font-size", "40px");
+                    $("div:last a").attr({"href" : "https://www.google.ro/",
+                                         "title" : "Google"});
+                });
+                $("#btn5").click(function() {
+                    $("div:last").append(l);
+                });
+                $("#btn6").click(function() {
+                    $("div:last").prepend(l);
+                });
+                $("#btn7").click(function() {
+                    $("div:last").after(l);
+                });
+                $("#btn8").click(function() {
+                    $("div:last").before(l);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Progressbar</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        <style>
+            #label {
+                position: absolute;
+                left: 45%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="progress">
+            <div id="label"></div>
+        </div>
+        <br />
+        <button id="start">Start</button>
+        <script>
+            var x = 0;
+            var run = false;
+            var timer;
+            $(function() {
+                $("#progress").progressbar({
+                    value: 0
+                });
+                $("#start").click(function() {
+                    if (run) return;
+                    run = true;
+                    $("#label").text("In progress...");
+                    setTimeout(function() {
+                        timer = setInterval(function() {
+                            if (x == 100) {
+                                $("#label").text("100%");
+                                $("#progress").progressbar("option", "value", 100);
+                                x = 0;
+                                clearInterval(timer);
+                                run = false;
+                            } else {
+                                $("#label").text(x + "%");
+                                $("#progress").progressbar("option", "value", x);
+                                x++;
+                            }
+                        }, 100);
+                    }, 1000);
+                });
+            });
+        </script>
+    </body>
+</html>

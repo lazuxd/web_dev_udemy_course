@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Progressbar</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        <style>
+            #first {
+                background-color: aqua;
+            }
+            #os {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first">
+            <select id="os" name="os">
+                <optgroup label="debBased">
+                    <option>Debian</option>
+                    <option>Ubuntu</option>
+                    <option>Mint</option>
+                </optgroup>
+                <optgroup label="rpmBased">
+                    <option>Fedora</option>
+                    <option>openSuse</option>
+                    <option>CentOS</option>
+                </optgroup>
+            </select>
+        </div>
+        
+        <script>
+            $(function() {
+                $("#os").selectmenu();
+            });
+        </script>
+    </body>
+</html>

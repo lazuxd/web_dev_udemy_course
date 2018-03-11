@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Select HTML elements</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            div {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: red;
+            }
+            .cls1 {
+                background-color: green;
+            }
+            .cls2 {
+                background-color: magenta;
+            }
+            .f {
+                background-color: aqua;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="first"><p>In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight</p><p>to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled.</p><p>However, the dust storms lifted, allowing them to resume operations.</p></div>
+        <div class="cls1"><p>In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight</p><p>to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled.</p><p>However, the dust storms lifted, allowing them to resume operations.</p></div>
+        <div class="cls2"><p>In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight</p><p>to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled.</p><p>However, the dust storms lifted, allowing them to resume operations.</p>
+        <a href="#first">This is a link.</a></div>
+        <p><input type="text" /><button type="submit">Submit</button></p>
+<!--        <input type="text" /><button type="submit">Submit</button>-->
+        <table>
+            <tr><th>Name</th><th>Company</th><th>Known for</th></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+            <tr><td>Linus Torvalds</td><td>The Linux Foundation</td><td>The Linux Kernel</td></tr>
+            <tr><td>Bill Gates</td><td>Microsoft</td><td>A Bad OS</td></tr>
+        </table>
+        <script>
+            $(function () {
+//                $("*").css("font-size", "24px");
+//                $("div > *:first-child, div > *:last-child").css("background-color", "orange");
+//                $("[href='#first']").css("border", "10px solid lime");
+//                $("tr:odd").css("background-color", "lime");
+//                $("tr:even").css("background-color", "orange");
+//                $("input").css("background-color", "green");
+//                $("input").css("color", "cyan");
+//                $("button").css("color", "red");
+//                $("div:has(a)").css("text-decoration", "line-through");
+                $(":submit").click(function() {
+                    var s = $("input:first").val();
+                    $(".f:last").html(s);
+                });
+                $("td").mouseover(function() {
+                    $(this).css("background-color", "green");
+                });
+                $("td").mouseout(function() {
+                    $(this).css("background-color", "");
+                });
+                $(":text").focus(function() {
+                    $(this).css("border", "2px solid lime");
+                });
+                $(":text").blur(function() {
+                    $(this).css("border", "");
+                });
+                $(":text").keyup(function() {
+                    $(".cls1 span").html($(this).val());
+                });
+            });
+        </script>
+    </body>
+</html>

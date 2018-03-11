@@ -1,0 +1,19 @@
+<p id="calcAbout" class="math">
+    Calculus (from Latin calculus, literally 'small pebble', used for counting and calculations, as on an abacus)[1] is the mathematical study of continuous change, in the same way that geometry is the study of shape and algebra is the study of generalizations of arithmetic operations. It has two major branches, differential calculus (concerning rates of change and slopes of curves),[2] and integral calculus (concerning accumulation of quantities and the areas under and between curves).[3] These two branches are related to each other by the fundamental theorem of calculus. Both branches make use of the fundamental notions of convergence of infinite sequences and infinite series to a well-defined limit. Generally, modern calculus is considered to have been developed in the 17th century by Isaac Newton and Gottfried Wilhelm Leibniz. Today, calculus has widespread uses in science, engineering, and economics.
+</p>
+
+<ul id="OS" class="compSci">
+    <li>Linux is the best operating system ever!</li>
+    <li>Macintosh is not as good as Linux</li>
+    <li>Windows SUCKS!!!  - it is the worst OS ever!</li>
+</ul>
+
+<p id="cpp" class="compSci">
+    It was designed with a bias toward system programming and embedded, resource-constrained and large systems, with performance, efficiency and flexibility of use as its design highlights. C++ has also been found useful in many other contexts, with key strengths being software infrastructure and resource-constrained applications, including desktop applications, servers (e.g. e-commerce, web search or SQL servers), and performance-critical applications (e.g. telephone switches or space probes). C++ is a compiled language, with implementations of it available on many platforms. Many vendors provide C++ compilers, including the Free Software Foundation, Microsoft, Intel, and IBM.
+</p>
+
+<ul id="calcList" class="math">
+    <li>Calculus 1</li>
+    <li>Calculus 2</li>
+    <li>Calculus 3</li>
+</ul>

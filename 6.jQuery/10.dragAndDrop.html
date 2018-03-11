@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Drag And Drop</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <style>
+            body {
+                font-size: 150%;
+                font-family: monospace;
+            }
+            div {
+                margin: 20px;
+                padding: 20px;
+            }
+            #first {
+                background-color: red;
+            }
+            #second {
+                z-index: 10;
+            }
+            .cls1 {
+                background-color: green;
+            }
+            .cls2 {
+                background-color: blue;
+            }
+            .f {
+                background-color: aqua;
+            }
+            .d {
+                border: 3px lime solid;
+                width: auto;
+                height: 500px;
+            }
+            .notShown {
+                display: none;
+            }
+            #third {
+/*                z-index: -1;*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="text" class="notShown">In July 2018, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers and threatened the ability of the craft to gather energy through their solar panels, causing engineers to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <div id="first" class="ui-corner-all">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers <span class="f">and threatened the ability of the craft to gather energy trough their solar panels, causing engineers</span> to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <div id="second" class="cls1"></div>
+        <div id="third" class="ui-state-error">In July 2007, during the fourth mission extension, Martian dust storms blocked sunlight to the rovers and threatened the ability of the craft to gather energy through their solar panels, causing engineers to fear that one or both of them might be permanently disabled. However, the dust storms lifted, allowing them to resume operations.</div>
+        <button id="stopDraggable">Stop Draggable</button>
+        <div class="d">
+            <p class="removable">Space for dropping</p>
+            <p class="dropIn"></p>
+        </div>
+        <script>
+            function startDrag() {
+                $(this).css('text-shadow', '1px 1px 1px');
+            }
+            function stopDrag() {
+                $(this).css('text-shadow', 'none');
+            }
+            $(function() {
+                var words = $("#text").text().split(' ');
+                var t = $("#second");
+                var lineWidth = parseInt(t.css('width'));
+                lineWidth -= parseInt(t.css('padding-left'));
+                lineWidth -= parseInt(t.css('padding-right'));
+                var curWidth;
+                var spanWidth;
+                var curSpan;
+                for (var i = 0, curWidth = 0; i < words.length; i++) {
+                    if (curWidth == 0) {
+                        words[i] = "<span id='w"+i+"'>" + words[i] + "</span>";
+                        t.append(words[i]);
+                        spanWidth = parseInt(t.find("span:last").css('width'));
+                    } else {
+                        words[i] = "<span id='w"+i+"' style='margin-left: 8px'>" + words[i] + "</span>";
+                        t.append(words[i]);
+                        spanWidth = parseInt(t.find("span:last").css('width'))+8;
+                    }
+                    if (curWidth + spanWidth <= lineWidth) {
+                        curWidth += spanWidth;
+                    } else {
+                        curSpan = t.find("span:last");
+                        curSpan.css("margin-left", "0px");
+                        curSpan.before("<br />");
+                        curWidth = parseInt(curSpan.css('width'));
+                    }
+                    t.find("span:last").draggable({
+                        helper: "clone",
+                        start: startDrag,
+                        stop: stopDrag
+                    });
+                }
+                var s = $("#third").css("font-size");
+                var fs = Number(s.slice(0,s.search(/[a-zA-Z]/)));
+                $("#stopDraggable").click(function() {
+                    $("#first").draggable('disable');
+                });
+                $("#first").draggable({
+                    axis: "x"
+                });
+                $("#second").draggable({
+                    axis: "y"
+                });
+                $("#third").draggable({
+                    revert: true,
+                    start: function() {
+                        $(this).removeClass();
+                        $(this).addClass("cls2");
+                    },
+                    drag: function() {
+                        var spx = String(fs + Math.floor(7*Math.random()) - 3) + "px";
+                        $(this).css("font-size" , spx);
+                    },
+                    stop: function() {
+                        $(this).removeClass();
+                        $(this).addClass("ui-state-error");
+                    }
+                });
+                $(".d").droppable({
+                    drop: function(event, ui) {
+                        $(this).find(".removable").remove();
+                        $(this).find(".dropIn").append(ui.draggable.text()+" ");
+                    },
+                    accept: '#second span'
+                });
+            });
+        </script>
+    </body>
+</html>
