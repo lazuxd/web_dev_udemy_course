@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <title>Forms</title>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Pawwsord" class="form-control"/>
+                </div>
+                <button type="submit" class="btn btn-default">Login</button>
+            </form>
+            <hr/>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" id="email" placeholder="Email" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="password" placeholder="Password" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-sm-offset-2 col-sm-8">
+                    <button type="submit" class="btn btn-default">Login</button>
+                </div>
+            </form>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+            <form>
+                <label for="comments" class="control-label">Comments:</label>
+                <textarea id="comments" rows="5" class="form-control"></textarea>
+                <br/>
+                <br/>
+                <div class="checkbox checkbox-inline">
+                    <label><input name="cb1" value="1" type="checkbox" /> Checkbox 1</label>
+                </div>
+                <div class="checkbox checkbox-inline">
+                    <label><input name="cb2" value="2" type="checkbox" /> Checkbox 2</label>
+                </div>
+                <div class="checkbox checkbox-inline disabled">
+                    <label><input name="cb3" value="3" type="checkbox" disabled/> Checkbox 3</label>
+                </div>
+                <br/>
+                <br/>
+                <div class="radio radio-inline">
+                    <label><input type="radio" name="rb"/> Radiobutton 1</label>
+                </div>
+                <div class="radio radio-inline disabled">
+                    <label><input type="radio" name="rb" disabled/> Radiobutton 2</label>
+                </div>
+                <div class="radio radio-inline">
+                    <label><input type="radio" name="rb"/> Radiobutton 3</label>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <select class="form-control">
+                            <option>Linux Mint</option>
+                            <option>Manjaro</option>
+                            <option>Debian</option>
+                            <option>Arch</option>
+                            <option>Ubuntu</option>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <input type="text" class="form-control" disabled/>
+                <br/>
+                <br/>
+                <hr/>
+                <div class="row">
+                    <div class="form-group col-xs-4 has-success">
+                        <label for="input1" class="sr-only">Input1</label>
+                        <input type="text" class="form-control input-sm" placeholder="Input1"/>
+                    </div>
+                    <div class="form-group col-xs-4 has-error">
+                        <label for="input2" class="sr-only">Input2</label>
+                        <input type="text" class="form-control" placeholder="Input2"/>
+                    </div>
+                    <div class="form-group col-xs-4 has-warning">
+                        <label for="input3" class="sr-only">Input3</label>
+                        <input type="text" class="form-control input-lg" placeholder="Input3"/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="form-group has-feedback has-warning">
+                    <label for="textinput" class="sr-only">Text Input</label>
+                    <input type="text" class="form-control" id="textinput"/>
+                    <span class="glyphicon glyphicon-alert form-control-feedback"></span>
+                    <span class="sr-only">warning</span>
+                </div>
+                <br/>
+                <div class="input-group has-feedback has-success">
+                    <label for="textinput" class="sr-only">Text Input</label>
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" id="textinput"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    <span class="sr-only">warning</span>
+                </div>
+                <br/>
+                <div class="input-group has-feedback has-success">
+                    <label for="textinput" class="sr-only">Text Input</label>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default">Submit</button>
+                    </span>
+                    <input type="text" class="form-control" id="textinput"/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    <span class="sr-only">warning</span>
+                </div>
+                <br/>
+            </form>
+        </div>
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
