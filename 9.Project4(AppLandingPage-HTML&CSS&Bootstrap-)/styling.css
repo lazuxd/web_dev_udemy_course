@@ -1,0 +1,185 @@
+.jumbotron {
+    background-image: url(res/166.jpg);
+    background-size: 100% 100%
+}
+
+.feature {
+    color: white;
+}
+
+.feature .btn-default {
+    font-weight: bold;
+    background: rgba(145, 82, 58, 0.5);
+    color: white;
+    border-radius: 15px;
+    width: 190px;
+    margin-right: 30px;
+}
+
+.feature .btn-default:hover {
+    background: rgb(145, 82, 58);
+}
+
+.centered {
+    text-align: center;
+}
+
+.tryIt {
+    margin: 50px;
+}
+
+#tryDiv h2 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    color: black;
+}
+
+#tryDiv p {
+    margin-bottom: 100px;
+}
+
+.getApp {
+    width: 240px;
+    height: 80px;
+}
+
+.footer {
+    background: #eee;
+}
+
+.footer p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+@media (min-width: 1200.01px) {
+    .jumbotron {
+        height: 900px
+    }
+    .jumbotron img {
+        width: 90px;
+        height: 90px;
+        margin-left: 150px;
+        margin-top: 50px;
+    }
+    .feature {
+        padding-left: 150px;
+    }
+    .feature h1 {
+        margin-top: 100px;
+    }
+    .feature .btn-default {
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 992.01px) and (max-width: 1200px) {
+    .jumbotron {
+        height: 750px
+    }
+    .jumbotron img {
+        width: 90px;
+        height: 90px;
+        margin-left: 100px;
+        margin-top: 40px
+    }
+    .feature {
+        padding-left: 100px;
+    }
+    .feature h1 {
+        margin-top: 80px;
+    }
+    .feature .btn-default {
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 768.01px) and (max-width: 992px) {
+    .jumbotron {
+        height: 600px
+    }
+    .jumbotron img {
+        width: 75px;
+        height: 75px;
+        margin-left: 60px;
+        margin-top: 15px
+    }
+    .feature {
+        padding-left: 60px;
+    }
+    .feature h1 {
+        margin-top: 50px;
+    }
+    .feature .btn-default {
+        margin-top: 25px;
+    }
+}
+@media (min-width: 576.01px) and (max-width: 768px) {
+    .jumbotron {
+        height: 450px
+    }
+    .jumbotron img {
+        width: 60px;
+        height: 60px;
+        margin-left: 60px;
+        margin-top: 10px;
+    }
+    .feature {
+        text-align: center;
+    }
+    .feature h1 {
+        margin-top: 40px;
+        font-size: 38px;
+    }
+    .feature p, .feature a {
+        font-size: 18px;
+    }
+    .feature .btn-default {
+        margin-top: 25px;
+    }
+    .getApp {
+        width: 160px;
+        height: 60px;
+    }
+    .tryIt {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .jumbotron {
+        height: 400px
+    }
+    .jumbotron img {
+        width: 40px;
+        height: 40px;
+        margin-left:30px;
+        margin-top: 5px;
+    }
+    .feature {
+        padding: 10px;
+        text-align: center;
+    }
+    .feature h1 {
+        margin-top: 10px;
+        font-size: 34px;
+    }
+    .feature p, .feature a {
+        font-size: 14px;
+    }
+    .feature .btn-default {
+        margin-top: 10px;
+        margin-right: 0px;
+    }
+    .feature .btn-default:last-child {
+        margin-top: 5px;
+    }
+    .getApp {
+        width: 100px;
+        height: 40px;
+    }
+    .tryIt {
+        margin: 15px;
+    }
+}
