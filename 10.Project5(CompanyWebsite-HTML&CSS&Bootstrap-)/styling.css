@@ -5,7 +5,11 @@ body {
     background-size: cover;
     font-family: 'Crete Round', serif;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+}
+
+.btn {
+    border: 0 solid transparent;
 }
 
 .page .mItem img {
@@ -25,7 +29,7 @@ body {
     margin: 0;
     overflow: auto;
     padding: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 .page .jumbotron {
@@ -33,7 +37,6 @@ body {
     background: rgba(0, 0, 0, 0);
     color: white;
     margin: 0 auto;
-    max-width: 1400px;
     text-align: center;
 }
 
@@ -71,15 +74,12 @@ body {
 
 .page .btn-default {
     background: #44eac3af;
-    border: 0;
+    border-color: #eee;
+    border-color: rgba(0,0,0,0);
     border-radius: 15px;
     color: white;
     margin-top: 64px;
     width: 300px;
-}
-
-.page .btn-lg, .page .btn {
-    border: 0;
 }
 
 .page .btn-default:hover {
@@ -89,18 +89,47 @@ body {
 
 .page .footer {
     background: #eee;
-    background: rgba(0, 0, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    border: 0;
+    bottom: 0;
     height: 64px;
-    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
 }
 
-.page .footer p {
-    margin: auto 0;
+.page .footer span {
+    border: 0;
+    line-height: 64px;
+    padding: 0;
+    padding-left: 80px;
+}
+
+.content {
+    border: 0;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    padding-bottom: 64px;
+    position: relative;
 }
 
 @media (max-width: 575.98px) {
     .page .mItem img {
         height: 100px;
         width: 100px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .page .jumbotron {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1400.01px) {
+    .page .jumbotron {
+        max-width: 1400px;
     }
 }
