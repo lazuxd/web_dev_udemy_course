@@ -1,0 +1,102 @@
+body {
+    font-family: 'Crete Round', serif;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(res/232.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#page .mItem img {
+    width: 150px;
+    height: 150px;
+}
+
+#page .mItem p {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 340px;
+    margin: 10px auto;
+}
+
+#page {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+#page .jumbotron {
+    color: white;
+    max-width: 1400px;
+    background: rgba(0, 0, 0, 0);
+    margin: 0px auto;
+    text-align: center;
+}
+
+#page .jumbotron h1 {
+    margin-bottom: 64px;
+}
+
+#page .navbar-brand {
+    width: 36px;
+    background: url(res/brand.png) center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin-right: 16px;
+}
+
+#page .navbar .container-fluid {
+    padding: 4px 28px;
+}
+
+#page .navbar-inverse {
+    background: rgba(0,0,0,0.5);
+}
+
+#page .navbar-nav li {
+    background: rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+#page .navbar-nav li:hover {
+    border-bottom: 1px solid #44eac3;
+}
+
+#page .btn-default {
+    color: white;
+    width: 300px;
+    background: #44eac3af;
+    border: 0px solid rgba(0,0,0,0);
+    border-radius: 15px;
+    margin-top: 64px;
+}
+
+#page .btn-lg, #page .btn {
+    border: 0px solid rgba(0,0,0,0);
+}
+
+#page .btn-default:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+#page .footer {
+    position: absolute;
+    bottom: 0px;
+    background: rgba(0,0,255,0.5);
+    width: 100vw;
+    height: 64px;
+}
+
+#page .footer p {
+    margin: auto 0px;
+}
+
+@media (max-width: 575.98px) {
+    #page .mItem img {
+        width: 100px;
+        height: 100px;
+    }
+}
