@@ -1,0 +1,107 @@
+body {
+    background: url(res/background.jpg) center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Nova Mono', monospace;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.heading {
+    font-size: 6vw;
+    margin-top: 2vw;
+    padding-top: 10px;
+}
+
+.jumbotron {
+    background: transparent;
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.timer-main {
+    font-size: 10vw;
+}
+
+.timer-lap {
+    font-size: 4vw;
+    padding-top: 20px;
+    position: absolute;
+    right: 15px;
+    top: 10vw;
+}
+
+.btn-custom {
+    background: #f49835;
+    border: 0 solid;
+    border-radius: 6vw;
+    font-size: 2vw;
+    font-weight: bold;
+    height: 11vw;
+    width: 11vw;
+}
+
+.btn-custom:first-of-type {
+    margin-right: 8vw;
+}
+
+.btn-custom:last-of-type {
+    margin-right: 0;
+}
+
+.btn-custom:hover {
+    background: #f498359f;
+}
+
+.btn-custom:active {
+    background: #ffffff;
+    color: #f49835;
+}
+
+.list {
+    height: 400px;
+    margin-bottom: 30px;
+    overflow-y: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: auto;
+}
+
+.list-item {
+    border-bottom: 1px solid #ffffff;
+    height: 80px;
+    line-height: 80px;
+    position: relative;
+    width: 100%;
+}
+
+.list-item span {
+    font-size: 28px;
+    position: absolute;
+}
+
+.list-item span:first-of-type {
+    left: 5px;
+}
+
+.list-item span:last-of-type {
+    right: 5px;
+}
+
+@media (max-width: 575.98px) {
+    .list {
+        height: 300px;
+    }
+
+    .list-item {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .list-item span {
+        font-size: 20px;
+    }
+}
