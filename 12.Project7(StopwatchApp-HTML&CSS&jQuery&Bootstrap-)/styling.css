@@ -41,6 +41,7 @@ body {
     font-size: 2vw;
     font-weight: bold;
     height: 11vw;
+    outline-width: 0;
     width: 11vw;
 }
 
