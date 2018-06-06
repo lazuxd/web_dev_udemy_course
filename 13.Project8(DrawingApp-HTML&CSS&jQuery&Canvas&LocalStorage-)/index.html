@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
+        <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Drawing App</title>
+    </head>
+
+    <body>
+
+        <div class="outer">
+            <div class="middle">
+                <div class="inner">
+
+                    <h1 class="title">Drawing App</h1>
+
+                    <div class="controls noselect">
+                        <input type="color" class="color" id="color" value="#000000"/>
+                        <div class="slider" id="slider"></div>
+                        <div class="container-preview"><div class="preview" id="preview"></div></div>
+                    </div>
+
+                    <canvas class="drawing" id="drawing" width="598px" height="478px"></canvas>
+
+                    <div class="buttons noselect">
+                        <span class="button" id="erase">Erase</span>
+                        <span class="button" id="save">Save</span>
+                        <span class="button" id="reset">Reset</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="code.js"></script>
+
+    </body>
+
+</html>
