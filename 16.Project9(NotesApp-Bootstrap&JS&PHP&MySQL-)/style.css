@@ -1,0 +1,26 @@
+body {
+    background: url(resources/notebook.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Comfortaa', cursive;
+}
+
+.greenBtn {
+    background: rgb(114, 190, 35);
+    background: rgba(114, 190, 35, 0.8);
+}
+
+.greenBtn:hover {
+    background: rgb(114, 190, 35);
+}
+
+.jumbotron {
+    background: transparent;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.jumbotron button {
+    margin-top: 50px;
+}
